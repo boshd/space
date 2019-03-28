@@ -1,1 +1,1 @@
-# React + Next JS
+# React + Next.js
