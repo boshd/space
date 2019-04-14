@@ -40,3 +40,4 @@ func NewSqliteDB(databaseName string) *DB {
 	//db.LogMode(true)
 
 	return &DB{db}
+}
