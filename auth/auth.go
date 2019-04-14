@@ -17,7 +17,7 @@ var JWTMiddleware = jwtmiddleware.New(jwtmiddleware.Options{
 		return signingKey, nil
 	},
 	UserProperty:  "user",
-	Debug:         "false",
+	Debug:         false,
 	SigningMethod: jwt.SigningMethodHS256,
 })
 
