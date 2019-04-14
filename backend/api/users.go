@@ -2,6 +2,7 @@ package api
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/kareemarab/space/auth"
@@ -18,7 +19,7 @@ func (api *API) UserSignup(w http.ResponseWriter, req *http.Request) {
 	decoder := json.NewDecoder(req.Body)
 	jsondata := UserJSON{}
 	err := decoder.Decode(&jsondata)
-
+	fmt.Fprintf(w, "fsdjfnsjdfnjnsjdnfjnsjdjfsjdnfjsnjdfn")
 	if err != nil || jsondata.Username == "" || jsondata.Password == "" {
 		http.Error(w, "Missing username or password", http.StatusBadRequest)
 		return

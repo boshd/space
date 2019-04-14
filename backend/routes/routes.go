@@ -15,8 +15,8 @@ func NewRoutes(api *api.API) *mux.Router {
 	mux := mux.NewRouter()
 
 	// client static files
-	// mux.Handle("/", http.FileServer(http.Dir("./client/dist/"))).Methods("GET")
-	// mux.PathPrefix("/static/js").Handler(http.StripPrefix("/static/js/", http.FileServer(http.Dir("./client/dist/static/js/"))))
+	mux.Handle("/", http.FileServer(http.Dir("./spaceweb/dist/"))).Methods("GET")
+	mux.PathPrefix("/static/js").Handler(http.StripPrefix("/static/js/", http.FileServer(http.Dir("./spaceweb/dist/static/js/"))))
 
 	// api
 	a := mux.PathPrefix("/api").Subrouter()
