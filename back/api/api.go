@@ -1,17 +1,23 @@
 package api
 
-import "github.com/markcheno/go-vue-starter/models"
+import (
+	"github.com/kareemarab/space/models"
+)
 
-// API object
+// API -
 type API struct {
-	users *models.UserManager
+	users  *models.UserManager
+	// quotes *models.QuoteManager
 }
 
-// NewAPI returns new api object
+// NewAPI -
 func NewAPI(db *models.DB) *API {
+
 	usermgr, _ := models.NewUserManager(db)
+	// quotemgr, _ := models.NewQuoteManager(db)
 
 	return &API{
-		users: usermgr,
+		users:  usermgr,
+		// quotes: quotemgr,
 	}
 }
