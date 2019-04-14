@@ -3,10 +3,9 @@ package routes
 import (
 	"net/http"
 
-	"space/auth"
-
 	"github.com/gorilla/mux"
 	"github.com/kareemarab/space/api"
+	"github.com/kareemarab/space/auth"
 	"github.com/urfave/negroni"
 )
 
