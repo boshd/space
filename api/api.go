@@ -1,12 +1,10 @@
 package api
 
-import (
-	"space/models"
-)
+import "github.com/kareemarab/space/models"
 
 // API -
 type API struct {
-	users  *models.UserManager
+	users *models.UserManager
 	// quotes *models.QuoteManager
 }
 
@@ -17,7 +15,7 @@ func NewAPI(db *models.DB) *API {
 	// quotemgr, _ := models.NewQuoteManager(db)
 
 	return &API{
-		users:  usermgr,
+		users: usermgr,
 		// quotes: quotemgr,
 	}
 }

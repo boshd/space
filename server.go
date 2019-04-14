@@ -1,9 +1,9 @@
 package main
 
 import (
-	"space/api"
-	"space/models"
-	"space/routes"
+	"github.com/kareemarab/space/api"
+	"github.com/kareemarab/space/models"
+	"github.com/kareemarab/space/routes"
 	"github.com/urfave/negroni"
 )
 

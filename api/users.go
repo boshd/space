@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"space/auth"
-	"space/models"
+	"github.com/kareemarab/space/auth"
+	"github.com/kareemarab/space/models"
 )
 
 type UserJSON struct {
