@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/kareemarab/space/api"
-	"github.com/kareemarab/space/auth"
+	"space/api"
+	"space/auth"
 	"github.com/urfave/negroni"
 )
 

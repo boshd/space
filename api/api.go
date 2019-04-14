@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/kareemarab/space/models"
+	"space/models"
 )
 
 // API -

@@ -3,7 +3,7 @@ package auth
 import (
 	jwtmiddleware "github.com/auth0/go-jwt-middleware"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/kareemarab/space/models"
+	"space/models"
 )
 
 var signingKey = []byte("ineufdsdmcsl")
