@@ -26,7 +26,7 @@ func NewRoutes(api *api.API) *mux.Router {
 	u.HandleFunc("/signup", api.UserSignup).Methods("POST")
 	u.HandleFunc("/login", api.UserLogin).Methods("POST")
 	u.Handle("/info", negroni.New(
-		negroni.HandlerFunc(auth.JwtMiddleware.HandlerWithNext),
+		negroni.HandlerFunc(auth.JWTMiddleware.HandlerWithNext),
 		negroni.Wrap(http.HandlerFunc(api.UserInfo)),
 	))
 
