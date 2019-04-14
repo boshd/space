@@ -14,11 +14,11 @@ type DB struct {
 
 func NewPostgresDB(dataSourceName string) *DB {
 	db, err := gorm.Open("postgres", dataSourceName)
-	
+
 	if err != nil {
 		panic(err)
 	}
-	
+
 	if err = db.DB().Ping(); err != nil {
 		panic(err)
 	}

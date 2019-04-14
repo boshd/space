@@ -12,9 +12,9 @@ import (
 
 type User struct {
 	gorm.Model `json:"-"`
-	Username string `gorm:not null;unique" json:"username"`
-	Password string `gorm:not null" json:"-"`
-	UUID 	 string `gorm:not null;unique" json:"uuid"`
+	Username   string `gorm:not null;unique" json:"username"`
+	Password   string `gorm:not null" json:"-"`
+	UUID       string `gorm:not null;unique" json:"uuid"`
 }
 
 type UserManager struct {
@@ -53,7 +53,7 @@ func (state *UserManager) AddUser(username, password string) *User {
 	user := &User{
 		Username: username,
 		Password: passwordHash,
-		UUID: guid.String(),
+		UUID:     guid.String(),
 	}
 	state.db.Create(&user)
 	return user
@@ -64,7 +64,7 @@ func (state *UserManager) HashPassword(username, password string) string {
 	if err != nil {
 		panic("Permissions: bcrypt password hashing unseccessful")
 	}
-	reuturn string(hash)
+	return string(hash)
 }
 
 func (state *UserManager) CheckPassword(hashedPassword, password string) bool {
