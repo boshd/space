@@ -20,8 +20,8 @@ func NewRoutes(api *api.API) *mux.Router {
 	a := mux.PathPrefix("/api").Subrouter()
 
 	// users
-	u := a.PathPrefix("/user").Subrouter()
-	u.HandleFunc("/hello", HelloWorld)
+	// u := a.PathPrefix("/user").Subrouter()
+	a.HandleFunc("/hello", HelloWorld)
 
 	return mux
 }
