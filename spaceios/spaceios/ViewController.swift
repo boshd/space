@@ -12,7 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = "http://localhost:3000/api/user/login"
+        APIService.getAPIResponse(url, username: "kareemd", password: "lecfej") { (s) in
+            
+        }
     }
 
 
