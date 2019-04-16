@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/dgrijalva/jwt-go"
-	pb "github.com/kareemarab/space/user/proto/user"
+	pb "github.com/kareemarab/user/proto/auth"
 )
 
 var (

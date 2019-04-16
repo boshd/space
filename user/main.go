@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"log"
 
+	pb "github.com/kareemarab/user/proto/auth"
 	"github.com/micro/go-micro"
-
-	pb "github.com/kareemarab/space/user/proto/user"
+	_ "github.com/micro/go-plugins/registry/kubernetes"
+	k8s "github.com/micro/kubernetes/go/micro"
 )
 
 func main() {
@@ -28,10 +29,10 @@ func main() {
 	repo := &UserRepository{db}
 
 	tokenService := &TokenService{repo}
+	srv := k8s.NewService(
 
-	srv := micro.NewService(
-		micro.Name("go.micro.srv.user"),
-		micro.Version("latest"),
+		// This name must match the package name given in your protobuf definition
+		micro.Name("shippy.auth"),
 	)
 
 	srv.Init()
