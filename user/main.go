@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"log"
+
+	pb "github.com/kareemarab/space/user/proto/user"
 )
 
 func main() {
@@ -19,5 +20,5 @@ func main() {
 	// changes and will automatically migrate them everytime
 	// the service is started.
 
-	fmt.Print("jel")
+	db.AutoMigrate(&pb.User{})
 }
