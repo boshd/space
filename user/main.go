@@ -26,6 +26,7 @@ func main() {
 	db.AutoMigrate(&pb.User{})
 
 	repo := &UserRepository{db}
+
 	tokenService := &TokenService{repo}
 
 	srv := micro.NewService(
