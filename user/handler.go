@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	pb "github.com/kareemarab/user/proto/auth"
+	pb "github.com/kareemarab/space/user/proto/auth"
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/net/context"
 )

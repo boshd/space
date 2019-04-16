@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	pb "github.com/kareemarab/user/proto/auth"
+	pb "github.com/kareemarab/space/user/proto/auth"
 	"github.com/micro/go-micro"
 	_ "github.com/micro/go-plugins/registry/kubernetes"
 	k8s "github.com/micro/kubernetes/go/micro"
