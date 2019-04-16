@@ -8,7 +8,8 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
-func CreateConnection(*gorm.DB, error) {
+// CreateConnection ...
+func CreateConnection() (*gorm.DB, error) {
 
 	// Get database details from environment variables
 	host := os.Getenv("DB_HOST")

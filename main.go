@@ -8,7 +8,7 @@ import (
 func main() {
 
 	// create db connection
-	db, err = CreateConnection()
+	db, err := CreateConnection()
 	defer db.Close()
 
 	if err != nil {
