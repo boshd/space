@@ -7,7 +7,6 @@ import (
 	pb "github.com/kareemarab/space/user/proto/auth"
 	"github.com/micro/go-micro"
 	_ "github.com/micro/go-plugins/registry/kubernetes"
-	k8s "github.com/micro/kubernetes/go/micro"
 )
 
 func main() {
@@ -29,16 +28,23 @@ func main() {
 	repo := &UserRepository{db}
 
 	tokenService := &TokenService{repo}
-	srv := k8s.NewService(
+	// srv := k8s.NewService(
 
+	// 	// This name must match the package name given in your protobuf definition
+	// 	micro.Name("shippy.auth"),
+	// )
+
+	srv := micro.NewService(
 		// This name must match the package name given in your protobuf definition
-		micro.Name("shippy.auth"),
+		micro.Name("space.auth"),
+		// micro.Version("latest"),
 	)
 
 	srv.Init()
 
 	// Register handler
-	pb.RegisterUserServiceHandler(srv.Server(), &service{repo, tokenService})
+	pb.RegisterAuthHandler(srv.Server(), &service{repo, tokenService})
+	// Create(pb.User{Email: "kareem3043@gmail.com", Password: "lecfej"})
 
 	// Run the server
 	if err := srv.Run(); err != nil {
